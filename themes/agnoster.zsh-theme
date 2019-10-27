@@ -94,7 +94,8 @@ prompt_end() {
 #}
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment 14 16 "%B$(echo $USER | tr '[a-z]' '[A-Z]')%b"
+#   prompt_segment 14 16 "%B$(echo $USER | tr '[a-z]' '[A-Z]')%b"
+    prompt_segment 14 16 "%{%B%}$(echo ${USER} | tr '[a-z]' '[A-Z]')%{%b%K{14}%}"
   fi
 }
 
